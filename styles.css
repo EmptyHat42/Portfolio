@@ -1,0 +1,105 @@
+/* We do a css reset for easier styling along the way */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hidden x-axis overflow as a safety net since we're using images of different sizes */
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden;
+}
+
+/* We crop the image using css instead of photo editing. We do this by first setting the aspect ratio to 1:1,
+   Next we make sure that the image doesn't take up the whole page,
+   We set a border radius to get a round image. 
+   The object-fit stretches the image back so it doesn't look squished while the object-position lets me move the image inside the object properly */
+.profile-img{
+    aspect-ratio: 1/1;
+    width: 40%;
+    height: 10%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 40%;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    border: 3px solid #16676c;
+} 
+
+/* The background image min-height is high to counteract the .cloud margin-top: -500px;
+This is because the cloud image wanted to have a completely white background when scrolling but with some trial and error this worked */
+.background-img{
+    min-height: 150vh;
+    background-image: url(images/Background_animation.gif);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 30% 0%;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+/* We put a position and z-index on the cloud to make it go over the content in the pic-text-align div*/
+.cloud {
+    width: 100%;
+    margin-top: -500px;
+    position: relative;
+    z-index: 1; 
+}
+
+/* We make the image a block so there's no gap between the image and the same colored section after. */
+.cloud img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.summary-card{
+    display: flex;
+    background-color: bisque;
+    opacity: 80%;
+    width: 75%;
+    height: auto;
+    border-radius: 10px;
+    flex-direction: column;
+    text-align: center;
+    padding: 0.5rem;
+    margin-top: 2rem;
+    border: 2px solid white;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.info-card{
+    display: flex;
+    background-color: bisque;
+    opacity: 80%;
+    width: 50%;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 2rem;
+}
+
+.pic-text-align{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+}
+
+.content{
+    background-color:#16676c;
+    height: 500px;
+    position: relative;
+    z-index: 1;
+}
+
+.experience{
+
+}
