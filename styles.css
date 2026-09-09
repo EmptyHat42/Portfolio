@@ -1,12 +1,8 @@
-/* We do a css reset for easier styling along the way */
-*{
+/* Hidden x-axis overflow as a safety net since we're using images of different sizes */
+body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-/* Hidden x-axis overflow as a safety net since we're using images of different sizes */
-body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     overflow-x: hidden;
 }
@@ -22,22 +18,29 @@ body{
     border-radius: 50%;
     object-fit: cover;
     object-position: 40%;
-    margin-top: 3rem;
-    margin-left: 1rem;
+    margin-top: 2rem;
     border: 3px solid #16676c;
 } 
 
 /* The background image min-height is high to counteract the .cloud margin-top: -500px;
 This is because the cloud image wanted to have a completely white background when scrolling but with some trial and error this worked */
-.background-img{
+main > div:first-child{
     min-height: 150vh;
     background-image: url(images/Background_animation.gif);
     background-attachment: fixed;
     background-size: cover;
     background-position: 30% 0%;
     background-repeat: no-repeat;
-
     position: relative;
+}
+
+main > div:first-of-type > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: sticky;
+    top: 0;
 }
 
 /* We put a position and z-index on the cloud to make it go over the content in the pic-text-align div*/
@@ -71,6 +74,8 @@ This is because the cloud image wanted to have a completely white background whe
 
 ul{
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .info-card{
@@ -81,25 +86,12 @@ ul{
     border: 2px solid white;
     border-radius: 10px;
     padding: 0.5rem;
-    margin-top: 2rem;
-}
-
-.pic-text-align{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: sticky;
-    top: 0;
+    margin-top: 1rem;
 }
 
 .content{
     background-color:#16676c;
-    height: 500px;
+    height: 800px;
     position: relative;
     z-index: 1;
-}
-
-.experience{
-
 }
