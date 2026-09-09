@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Using lang="en" since all language shown on the page is in english -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
 </head>
 <body>
     <main>
-        <div>
-            <div>
-                <div class="summary-card">
+        <div> <!-- Purely cosmetic div used for the background image -->
+            <div> <!-- Purely cosmetic div used for basic centering of all content -->
+                <div class="summary-card"> <!-- Purely cosmetic div to contain our header and some text -->
                     <header>
                         <h1>Tomas Wetterlid</h1>
                     </header>
@@ -20,29 +20,62 @@
                 <div class="info-card">
                     <p>I have Experience in several aspects of web development such as:</p>
                     <ul>
+                        <!-- We make use of <span> to separate the content using css -->
                         <li><span>HTML5</span><span>⚫⚫⚫⚪⚪</span></li>
                         <li><span>CSS3</span><span>⚫⚫⚫⚪⚪</span></li>
                         <li><span>Git</span><span>⚫⚫⚪⚪⚪</span></li>
                         <li><span>C#</span><span>⚫⚫⚪⚪⚪</span></li>
                     </ul>
-                    <p>On top of that i have basic knowledge of the frameworks Blazor and Bootstrap</p>
+                    <p>On top of that I have basic knowledge of the frameworks Blazor and Bootstrap</p>
                 </div>
-                
             </div>
-        </div>
 
-        <div class="cloud">
-            <img src="images/Page_cloud.png" alt="">
-        </div>
+            <h2>Work Experience</h2> <!-- The h2 is separate from the section for easier styling -->
 
-        <div class="content">
-            <section class="experience">
-
+            <section> <!-- Our section for work experience, we again use <span> for separation using css -->
+                <article> <!-- Every job is it's own article -->
+                    <h3><span>System developer</span>-<span>ITCM AB</span></h3>
+                    <ul>
+                        <li>Developer for system used to coordinate internships for students. </li>
+                        <li>Web based .NET system built in HTML, CSS and C# with Blazor as framework. </li>
+                        <li>Technical support for the system was included in the job.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3><span>IT Technician</span>-<span>Netred AB</span></h3>
+                    <ul>
+                        <li>Support technician for systems in inventory management.</li>
+                        <li>General IT support was also part of the job.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3><span>Fitter</span>-<span>Aurobay</span></h3>
+                    <ul>
+                        <li>Assembly of motors for Volvo Cars. </li>
+                        <li>Very fast paced environment. </li>
+                    </ul>
+                </article>
+                <article>
+                    <h3><span>Fitter</span>-<span>Fagerhults Belysning</span></h3>
+                    <ul>
+                        <li>Assembly of lighting armature for both inside and outside use. </li>
+                        <li>Very fast paced environment. </li>
+                    </ul>
+                </article>
             </section>
+            <section> <!-- Section for the link to my github page -->
+                <h3>You can check out my past and current projects on github!</h3>
+                <a href="https://github.com/EmptyHat42" target="_blank" rel="noopener noreferrer">
+                <img src="images/GitHub_Invertocat_Black.svg" alt="Github logo, leads to github page">
+                </a>
+            </section>
+            <footer> <!-- Footer for contact information -->
+                <h3>Contact me via email:</h3>
+                <address>
+                    <a href="mailto:tomas.wetterlid@gmail.com">tomas.wetterlid@gmail.com</a>
+                </address>
+            </footer>
         </div>
     </main>
-    <footer>
-        
-    </footer>
 </body>
 </html>

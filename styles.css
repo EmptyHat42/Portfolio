@@ -14,21 +14,6 @@ p, h1{
     padding: 0;
 }
 
-/* We crop the image using css instead of photo editing. We do this by first setting the aspect ratio to 1:1,
-   Next we make sure that the image doesn't take up the whole page,
-   We set a border radius to get a round image. 
-   The object-fit stretches the image back so it doesn't look squished while the object-position lets me move the image inside the object properly */
-.profile-img{
-    aspect-ratio: 1/1;
-    width: 60%;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 40%;
-    margin-top: 2rem;
-    border: 3px solid #16676c;
-} 
-
 /* The background image min-height is high to counteract the .cloud margin-top: -500px;
 This is because the cloud image wanted to have a completely white background when scrolling but with some trial and error this worked */
 main > div:first-child{
@@ -48,31 +33,13 @@ main > div:first-of-type > div{
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    position: fixed;
-    z-index: 1;
-}
-
-/* We put a position and z-index on the cloud to make it go over the content in the pic-text-align div*/
-.cloud {
-    width: 100%;
-    padding-top: -500px;
-    margin-top: -500px;
-    position: relative;
-    z-index: 2;
-}
-
-/* We make the image a block so there's no gap between the image and the same colored section after. */
-.cloud img {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 /* We have a card class for the header and some text content */
 .summary-card{
     display: flex;
     background-color: bisque;
-    opacity: 80%;
+    opacity: 90%;
     width: 75%;
     height: auto;
     border-radius: 10px;
@@ -80,19 +47,13 @@ main > div:first-of-type > div{
     text-align: center;
     padding: 0.5rem;
     margin-top: 2rem;
-    border: 2px solid white;
+    border: 10px outset lightblue;
+    transition: 1s ease;
 }
 
-/* Removes the icon next to the list and removes padding */
-ul{
-    list-style-type: none;
-    padding: 0;
-}
-
-/* It's here so we can space our content inside the list */
-li{
-    display: flex;
-    justify-content: space-between;
+/* Makes the element slightly bigger when you hover over it */
+.summary-card:hover{
+    transform: scale(110%);
 }
 
 /* Card class for some info about my programming experience */
@@ -100,17 +61,228 @@ li{
     display: flex;
     flex-direction: column;
     background-color: bisque;
-    opacity: 80%;
+    opacity: 90%;
     width: 50%;
-    border: 2px solid white;
+    border: 10px outset lightblue;
     border-radius: 10px;
     padding: 0.5rem;
     margin-top: 1rem;
+    transition: 1s ease;
 }
 
-.content{
-    background-color:#16676c;
-    height: 800px;
-    position: relative;
-    z-index: 2;
+/* Makes the element slightly bigger when you hover over it */
+.info-card:hover{
+    transform:scale(110%);
+}
+
+/* We crop the image using css instead of photo editing. We do this by first setting the aspect ratio to 1:1,
+   Next we make sure that the image doesn't take up the whole page,
+   We set a border radius to get a round image. 
+   The object-fit stretches the image back so it doesn't look squished while the object-position lets me move the image inside the object properly */
+.profile-img{
+    aspect-ratio: 1/1;
+    width: 60%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 40%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border: 10px outset #16676c;
+    transition: 1s ease;
+} 
+
+/* Makes the element slightly bigger when you hover over it */
+.profile-img:hover{
+    transform:scale(110%);
+}
+
+/* Removes the icon next to the list and removes padding */
+.info-card > ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+/* It's here so we can space our content inside the list */
+.info-card > ul > li{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* An h2 for work experience, separate from the section for easier styling */
+div:first-child > h2{
+    text-align: center;
+    background-color: bisque;
+    border: 10px outset lightgreen;
+    border-radius: 10px;
+    opacity: 90%;
+    transition: 1s ease;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 1s ease;
+}
+
+/* Makes the element slightly bigger when you hover over it */
+div:first-child > h2:hover{
+    transform: scale(110%);
+}
+
+/* This section contains our work experience*/
+section{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+/* We've set up the different workplaces as articles */
+section article{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    border: 10px outset lightgreen;
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    opacity: 90%;
+    transition: 1s ease;
+}
+
+/* Makes the element slightly bigger when you hover over it */
+section article:hover{
+    transform: scale(110%);
+}
+
+/* This is so we can easily separate text with the help of <span>*/
+section article h3{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.2rem;
+    margin-top:0;
+}
+
+/* Small stling for experience list */
+section > article > ul{
+    margin: 0;
+    padding-left: 1rem;
+}
+
+/* We target the last section specifically for different styling than above */
+section:last-of-type{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+    border: 10px outset black;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    opacity: 90%;
+    transition: 1s ease;
+}
+
+/* Makes the element slightly bigger when you hover over it */
+section:last-of-type:hover{
+    transform: scale(110%);
+}
+
+/* We center the text inside the element */
+section:last-of-type h3{
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top:0;
+}
+
+/* Link to github styled as a button */
+section:last-of-type a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gray;
+    border: 10px outset black;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.5%;
+    color: black;
+}
+
+/* Changes color of the button slightly when you hover over it or if you're tabbed to it */
+section:last-of-type a:hover, section:last-of-type a:focus-visible{
+    transition: 0.3s ease;
+    transform: scale(105%);
+    background-color: rgb(163, 163, 163);
+}
+
+/* This is for the github logo on the button. (I've made sure it complies with their logo standards) */
+section:last-of-type img{
+    height: 4rem;
+}
+
+/* Our footer used for contact information. It spans the whole bottom of the page so it's easier to spot */
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    border: 10px outset palevioletred;
+    border-radius: 10px;
+    margin-bottom: 0;
+    opacity: 90%;
+}
+
+/* Small sizing fix */
+footer > h3{
+    margin: 1rem;
+}
+
+/* Small sizing fix */
+address > a{
+    font-size: 1.2rem;
+}
+
+/* The media query is used solely to make sure the transition between small and big screens look almost seamless 
+   We do this by changing some of the size values and setting a max width for all elements 
+   The only other thing is the section which we split into even parts for easier readability on big screens*/
+@media  (min-width: 700px){
+
+    .summary-card{
+        max-width: 920px;
+    }
+
+    .profile-img{
+        max-width: 415px;
+    }
+
+    .info-card{
+        width: 40%;
+        max-width: 430px;
+    }
+
+    h2{
+        width: 85%;
+        max-width: 920px;
+    }
+
+    section{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        max-width: 1000px;
+    }
+
+    section article{
+        width: 40%;
+        margin-bottom: 1rem;
+    }
+
+    section:last-of-type{
+        width: 70%;
+        max-width: 900px;
+    }
+
 }
