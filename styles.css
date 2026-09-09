@@ -7,14 +7,21 @@ body{
     overflow-x: hidden;
 }
 
+/* Removes margin and padding from some base elements */
+p, h1{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* We crop the image using css instead of photo editing. We do this by first setting the aspect ratio to 1:1,
    Next we make sure that the image doesn't take up the whole page,
    We set a border radius to get a round image. 
    The object-fit stretches the image back so it doesn't look squished while the object-position lets me move the image inside the object properly */
 .profile-img{
     aspect-ratio: 1/1;
-    width: 40%;
-    height: 10%;
+    width: 60%;
+    height: auto;
     border-radius: 50%;
     object-fit: cover;
     object-position: 40%;
@@ -25,30 +32,33 @@ body{
 /* The background image min-height is high to counteract the .cloud margin-top: -500px;
 This is because the cloud image wanted to have a completely white background when scrolling but with some trial and error this worked */
 main > div:first-child{
-    min-height: 150vh;
+    min-height: 100vh;
     background-image: url(images/Background_animation.gif);
     background-attachment: fixed;
     background-size: cover;
     background-position: 30% 0%;
     background-repeat: no-repeat;
-    position: relative;
 }
 
+/* We have a fixed position on this div so it doesn't scroll.
+   This so we have have the next section come up over the content in z-axis 
+   We also set a z-index to make sure the content is layered properly */
 main > div:first-of-type > div{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    position: sticky;
-    top: 0;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
 }
 
 /* We put a position and z-index on the cloud to make it go over the content in the pic-text-align div*/
 .cloud {
     width: 100%;
+    padding-top: -500px;
     margin-top: -500px;
     position: relative;
-    z-index: 1; 
+    z-index: 2;
 }
 
 /* We make the image a block so there's no gap between the image and the same colored section after. */
@@ -58,6 +68,7 @@ main > div:first-of-type > div{
     height: auto;
 }
 
+/* We have a card class for the header and some text content */
 .summary-card{
     display: flex;
     background-color: bisque;
@@ -72,14 +83,22 @@ main > div:first-of-type > div{
     border: 2px solid white;
 }
 
+/* Removes the icon next to the list and removes padding */
 ul{
     list-style-type: none;
-    margin: 0;
     padding: 0;
 }
 
+/* It's here so we can space our content inside the list */
+li{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Card class for some info about my programming experience */
 .info-card{
     display: flex;
+    flex-direction: column;
     background-color: bisque;
     opacity: 80%;
     width: 50%;
@@ -93,5 +112,5 @@ ul{
     background-color:#16676c;
     height: 800px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
