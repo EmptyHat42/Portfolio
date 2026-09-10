@@ -75,12 +75,14 @@ main > div:first-of-type > div{
     transform:scale(110%);
 }
 
+/* Small change to h2 for centering and margin */
 .info-card > h2{
     text-align: center;
     margin-top: 0;
     margin-bottom: 0.5rem;
 }
 
+/* Small change to paragraph for centering and margin */
 .info-card > p:first-of-type{
     text-align: center;
     margin-bottom: 1rem;
@@ -135,10 +137,12 @@ div:first-child > h2{
     transition: 1s ease;
 }
 
+/* Setting different colors for different elements */
 div:first-child > h2:nth-of-type(2){
     border: 10px outset yellow;
 }
 
+/* Setting different colors for different elements */
 div:first-child > h2:nth-of-type(3){
     border: 10px outset orange;
 }
@@ -171,6 +175,7 @@ section article{
     transition: 1s ease;
 }
 
+/* Setting different colors for different elements */
 section:nth-of-type(2) article{
     border: 10px outset yellow;
 }
@@ -194,20 +199,24 @@ section > article > ul{
     padding-left: 1rem;
 }
 
+/* Setting different colors for different elements */
 section:nth-of-type(3) article{
     border: 10px outset orange
 }
 
+/* Small change for centering h3 and adding margin*/
 section:nth-of-type(3) > article > h3{
     justify-content: center;
     margin-bottom: 1rem;
 }
 
+/* Giving some space at the bottom and rounding the corners of the image */
 section:nth-of-type(3) > article > img{
     border-radius: 5px;
     margin-bottom: 1rem;
 }
 
+/* Styling the invisible div for containing images */
 section:nth-of-type(3) > article > div{
     display: flex;
     flex-direction: row;
@@ -216,8 +225,11 @@ section:nth-of-type(3) > article > div{
     
 }
 
+/* We make sure the images inside the above div are even in size and spaced pretty much evenly between each other 
+   We also give each image a small border and background color for clarity during transformation */
 section:nth-of-type(3) > article > div > img{
     width: 40%;
+    height: auto;
     margin-top: 1rem;
     border: 5px outset orange;
     border-radius: 5px;
@@ -225,6 +237,7 @@ section:nth-of-type(3) > article > div > img{
     background-color: bisque;
 }
 
+/* When we hover over the images they scale even more than the parent container so you can see them each better */
 section:nth-of-type(3) > article > div > img:hover{
     transform: scale(150%);
 }
