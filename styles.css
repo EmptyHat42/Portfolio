@@ -75,6 +75,17 @@ main > div:first-of-type > div{
     transform:scale(110%);
 }
 
+.info-card > h2{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.info-card > p:first-of-type{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 /* We crop the image using css instead of photo editing. We do this by first setting the aspect ratio to 1:1,
    Next we make sure that the image doesn't take up the whole page,
    We set a border radius to get a round image. 
@@ -120,7 +131,16 @@ div:first-child > h2{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 3rem;
     transition: 1s ease;
+}
+
+div:first-child > h2:nth-of-type(2){
+    border: 10px outset yellow;
+}
+
+div:first-child > h2:nth-of-type(3){
+    border: 10px outset orange;
 }
 
 /* Makes the element slightly bigger when you hover over it */
@@ -143,13 +163,16 @@ section{
 section article{
     display: flex;
     flex-direction: column;
-    background-color: bisque;
+    background-color: rgb(255, 228, 196, 0.9);
     border: 10px outset lightgreen;
     border-radius: 10px;
     margin-bottom: 0.5rem;
     padding: 1rem;
-    opacity: 90%;
     transition: 1s ease;
+}
+
+section:nth-of-type(2) article{
+    border: 10px outset yellow;
 }
 
 /* Makes the element slightly bigger when you hover over it */
@@ -169,6 +192,41 @@ section article h3{
 section > article > ul{
     margin: 0;
     padding-left: 1rem;
+}
+
+section:nth-of-type(3) article{
+    border: 10px outset orange
+}
+
+section:nth-of-type(3) > article > h3{
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+section:nth-of-type(3) > article > img{
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+section:nth-of-type(3) > article > div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+section:nth-of-type(3) > article > div > img{
+    width: 40%;
+    margin-top: 1rem;
+    border: 5px outset orange;
+    border-radius: 5px;
+    transition: 1s ease;
+    background-color: bisque;
+}
+
+section:nth-of-type(3) > article > div > img:hover{
+    transform: scale(150%);
 }
 
 /* We target the last section specifically for different styling than above */
@@ -263,7 +321,7 @@ address > a{
         max-width: 430px;
     }
 
-    h2{
+    div:first-child > h2{
         width: 85%;
         max-width: 920px;
     }
